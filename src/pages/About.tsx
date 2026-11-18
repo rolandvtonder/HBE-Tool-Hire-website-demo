@@ -1,5 +1,5 @@
 import type {CSSProperties} from 'react';
-import {ABOUT, CREDENTIALS, SITE} from '../content';
+import {ABOUT, CREDENTIALS, SITE, waLink} from '../content';
 import {CategoryGrid, PageHero, QuoteBand, SectionHead} from '../components/Blocks';
 import {Icon} from '../components/Icons';
 import {useReveals} from '../hooks/useReveals';
@@ -81,14 +81,15 @@ export function About() {
       </section>
 
       {/* Wider services + project highlights */}
-      <section className="on-paper bg-paper text-ink">
+      <section id="services" className="on-paper bg-paper text-ink scroll-mt-24">
         <div className="wrap grid lg:grid-cols-2 section-y gap-[var(--stack)]">
           <div>
             <SectionHead label="Our services">
               More than <span className="it block text-red-deep">tool hire</span>
             </SectionHead>
             <p data-reveal className="mt-6 max-w-lg text-[18px] text-stone">
-              Need the job done, not just the tools? Hamashe Business Enterprise also takes on building and civil work.
+              Need the job done, not just the tools? We also do renovations, house remodelling, plumbing, building and
+              construction across Durban.
             </p>
             <ul className="mt-8 grid gap-x-6 gap-y-3 sm:grid-cols-2">
               {ABOUT.services.map((s, i) => (
@@ -98,6 +99,13 @@ export function About() {
                 </li>
               ))}
             </ul>
+            <a
+              data-reveal
+              href={waLink(`Hi ${SITE.short}, I'd like a quote for a building / renovation job.`)}
+              className="mt-8 inline-flex min-h-12 items-center gap-2 bg-red-deep px-6 text-[16px] font-bold text-white transition-colors hover:bg-ink"
+            >
+              <Icon name="chat" size={18} /> Get a building quote
+            </a>
           </div>
           <div>
             <SectionHead label="Project highlights">

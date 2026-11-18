@@ -3,7 +3,7 @@
  *
  * Business details come from the Hamashe Business Enterprise Profile 2026.
  * Anything marked PLACEHOLDER must still be confirmed by HBE before the site
- * goes live (opening hours, hire policies, and the exact items in each
+ * goes live (hire policies, and the exact items in each
  * category, which are a typical tool-hire range, not a stock list).
  */
 
@@ -34,11 +34,11 @@ export const address = () => [CONTACT.street, `${CONTACT.city}, ${CONTACT.region
 
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${SITE.name} ${address()}`)}`;
 
-/** Opening hours — PLACEHOLDER until HBE confirms. `schema` feeds the Google business data. */
+/** Opening hours, confirmed by HBE. `schema` feeds the Google business data. */
 export const HOURS: {days: string; time: string; schema: string[]; opens?: string; closes?: string}[] = [
-  {days: 'Monday – Friday', time: '07:30 – 17:00', schema: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '07:30', closes: '17:00'},
-  {days: 'Saturday', time: '08:00 – 12:00', schema: ['Saturday'], opens: '08:00', closes: '12:00'},
-  {days: 'Sunday & public holidays', time: 'Closed', schema: []},
+  {days: 'Monday – Friday', time: '08:00 – 16:00', schema: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '16:00'},
+  {days: 'Saturday', time: '09:00 – 14:00', schema: ['Saturday'], opens: '09:00', closes: '14:00'},
+  {days: 'Sunday', time: 'Closed', schema: []},
 ];
 
 export const waLink = (text = `Hi ${SITE.short}, I'd like a quote for tool hire.`) =>
@@ -393,7 +393,7 @@ export const CREDENTIALS = ['100% black-owned', 'B-BBEE Level 1 contributor', 'T
 
 export const ABOUT = {
   lines: [{t: 'Built by'}, {t: 'builders.', i: true}] as Line[],
-  body: 'HBE Tool Hire is the tool hire and rental arm of Hamashe Business Enterprise — a Durban built-environment company in construction, building maintenance, plumbing, civil engineering and road marking.',
+  body: 'HBE Tool Hire is the tool hire and rental arm of Hamashe Business Enterprise — a Durban built-environment company in building and construction, renovations, house remodelling, plumbing, civil engineering and road marking.',
   story: [
     'Hamashe Business Enterprise is a multi-disciplinary professional service provider in the built environment sector, based at Wiggins Hive in Durban. It was set up to empower and build capacity for young professionals in the emerging built environment sector, and to take a meaningful part in redressing historical economic imbalances and the lack of business opportunities for young professionals.',
     'HBE Tool Hire puts the same equipment we use on our own construction and maintenance sites in your hands — serviced, checked and ready to work, with straight advice from people who use these tools every day.',
@@ -402,7 +402,16 @@ export const ABOUT = {
   vision: 'To be a leading construction service provider with a solid footprint built on trust, quality and reliability.',
   approach:
     'Our work runs to a detailed schedule set out in a service level agreement. Project managers, supervisors and staff complete inspection checklists to confirm every task is done, and each focus area is assigned to competent staff who are responsible for delivering it.',
-  services: ['Construction', 'General building & maintenance', 'General plumbing', 'Civil engineering', 'Road marking', 'Tool hire & rental'],
+  services: [
+    'Building & construction',
+    'Renovations',
+    'House remodelling',
+    'Plumbing',
+    'General building & maintenance',
+    'Civil engineering',
+    'Road marking',
+    'Tool hire & rental',
+  ],
   projects: [
     {client: 'Richmond Municipality', work: 'Road construction'},
     {client: 'Ideal Building & Aluminium', work: 'Ongoing office sub-contract: site cleaning & clearance'},

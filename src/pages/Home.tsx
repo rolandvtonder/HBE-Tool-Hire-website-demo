@@ -193,8 +193,8 @@ export function Home() {
               </li>
             ))}
             <li>
-              <a href={u('/about/')} className="flex items-center gap-2 px-3.5 py-2 text-[15px] font-semibold text-blue underline-offset-4 hover:underline">
-                Part of {SITE.legalName} <Icon name="arrow" size={16} />
+              <a href={u('/about/#services')} className="flex items-center gap-2 px-3.5 py-2 text-[15px] font-semibold text-blue underline-offset-4 hover:underline">
+                We also do renovations, plumbing &amp; building <Icon name="arrow" size={16} />
               </a>
             </li>
           </ul>
