@@ -47,10 +47,9 @@ Brand colours, logo and business details come from the *Hamashe Business Enterpr
 
 All copy lives in **`src/content.ts`**. Search it for `PLACEHOLDER`:
 
-1. **Opening hours:** `HOURS`.
-2. **Equipment lists:** `items` in each of the `CATEGORIES`. These are a typical range; list what you actually stock.
-3. **FAQ answers and hire terms:** `FAQ_GROUPS`, `TERMS`. Match these to your real deposit, ID and payment policies.
-4. **Domain:** `SITE.url` currently points at the GitHub Pages demo. Change it when you buy a domain.
+1. **Equipment lists:** `items` in each of the `CATEGORIES`. These are a typical range; list what you actually stock.
+2. **FAQ answers and hire terms:** `FAQ_GROUPS`, `TERMS`. Match these to your real deposit, ID and payment policies.
+3. **Domain:** `SITE.url` currently points at the GitHub Pages demo. Change it when you buy a domain.
 
 Then:
 
