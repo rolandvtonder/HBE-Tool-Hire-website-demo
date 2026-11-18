@@ -8,15 +8,15 @@ export function Footer() {
 
   return (
     <footer className="relative bg-ink text-white">
-      <div className="hazard h-3" aria-hidden />
+      <div className="brand-bar h-2" aria-hidden />
 
       <div className="wrap pt-[var(--section-y)]">
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr]">
           <h2 className="display text-[clamp(48px,7vw,120px)]">
-            Need a tool <span className="it block text-yellow">today?</span>
+            Need a tool <span className="it block text-red">today?</span>
           </h2>
           <div className="flex flex-col justify-end gap-3 md:items-end">
-            <a href={waLink()} className="caps flex min-h-12 w-full items-center justify-between gap-6 bg-yellow px-6 py-4 text-ink transition-colors hover:bg-white md:w-80">
+            <a href={waLink()} className="caps flex min-h-12 w-full items-center justify-between gap-6 bg-red-deep px-6 py-4 text-white transition-colors hover:bg-white hover:text-ink md:w-80">
               WhatsApp for a quote <Icon name="chat" />
             </a>
             <a href={telLink} className="caps flex min-h-12 w-full items-center justify-between gap-6 bg-white/10 px-6 py-4 transition-colors hover:bg-white/20 md:w-80">
@@ -27,7 +27,7 @@ export function Footer() {
 
         <div className="mt-[var(--section-y)] grid gap-10 border-t border-white/15 pt-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="caps text-yellow">Contact</h3>
+            <h3 className="caps text-red">Contact</h3>
             <ul className="mt-4 space-y-3 text-concrete">
               <li>
                 <a href={telLink} className="flex items-start gap-3 hover:text-white">
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="caps text-yellow">Opening hours</h3>
+            <h3 className="caps text-red">Opening hours</h3>
             <dl className="mt-4 space-y-3 text-concrete">
               {HOURS.map((h) => (
                 <div key={h.days}>
@@ -65,7 +65,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Equipment categories">
-            <h3 className="caps text-yellow">Equipment hire</h3>
+            <h3 className="caps text-red">Equipment hire</h3>
             <ul className="mt-4 space-y-2 text-concrete">
               {CATEGORIES.map((c) => (
                 <li key={c.slug}>
@@ -78,7 +78,7 @@ export function Footer() {
           </nav>
 
           <nav aria-label="Footer">
-            <h3 className="caps text-yellow">Company</h3>
+            <h3 className="caps text-red">Company</h3>
             <ul className="mt-4 space-y-2 text-concrete">
               {NAV.map((n) => (
                 <li key={n.href}>
@@ -92,20 +92,21 @@ export function Footer() {
         </div>
 
         <div className="mt-[var(--stack)] border-t border-white/15 pt-8">
-          <h3 className="caps text-yellow">Delivering across Greater Durban</h3>
+          <h3 className="caps text-red">Delivering across Greater Durban</h3>
           <p className="mt-3 max-w-5xl text-[15px] text-concrete">{AREAS.join(' · ')}</p>
         </div>
       </div>
 
       <div className="mt-[var(--stack)] overflow-hidden px-[var(--gutter)]" aria-hidden>
-        <span ref={fit} className="display inline-block whitespace-nowrap pb-[0.06em] text-yellow">
-          HBE Tool Hire
+        <span ref={fit} className="display inline-block whitespace-nowrap pb-[0.06em] text-white">
+          <span className="text-red">H</span>
+          <span className="text-blue-bright">B</span>E Tool Hire
         </span>
       </div>
 
       <div className="wrap flex flex-col gap-2 pt-6 pb-28 text-[14px] text-concrete md:flex-row md:justify-between md:pb-10">
         <p suppressHydrationWarning>
-          © {new Date().getFullYear()} {SITE.name} · Durban, KwaZulu-Natal
+          © {new Date().getFullYear()} {SITE.name} · A {SITE.legalName} company · Durban, KwaZulu-Natal
         </p>
         <p>
           Photos &amp; video:{' '}

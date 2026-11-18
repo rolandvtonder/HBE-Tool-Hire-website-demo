@@ -20,7 +20,7 @@ export function Equipment() {
       <section className="bg-ink">
         <div className="wrap section-y">
           <SectionHead label="Our hire ranges" dark>
-            Pick a <span className="it text-yellow">range.</span>
+            Pick a <span className="it text-red">range.</span>
           </SectionHead>
           <p data-reveal className="mt-6 max-w-2xl text-[18px] text-concrete">
             Stock changes through the week. If you don’t see what you need, WhatsApp us — we may have it, or we’ll point you to what does the job.

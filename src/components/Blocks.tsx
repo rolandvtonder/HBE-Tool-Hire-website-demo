@@ -6,8 +6,8 @@ import {u} from '../lib/url';
 
 export const media = (f: string) => u(`/media/${f}`);
 
-/** Display headline from data: `i` lines are italic and yellow. */
-export function Lines({lines, accent = 'text-yellow'}: {lines: Line[]; accent?: string}) {
+/** Display headline from data: `i` lines are italic, in the accent colour. */
+export function Lines({lines, accent = 'text-red'}: {lines: Line[]; accent?: string}) {
   return (
     <>
       {lines.map((l, i) => (
@@ -67,7 +67,7 @@ export function PageHero({
               <li key={c.href} className="flex items-center gap-3">
                 {i > 0 && <span aria-hidden>/</span>}
                 {i === crumbs.length - 1 ? (
-                  <span aria-current="page" className="text-yellow">
+                  <span aria-current="page" className="text-red">
                     {c.label}
                   </span>
                 ) : (
@@ -79,7 +79,7 @@ export function PageHero({
             ))}
           </ol>
         </nav>
-        <p className="caps text-yellow">{eyebrow}</p>
+        <p className="caps text-red">{eyebrow}</p>
         <h1 className="display mt-4 text-[clamp(52px,8vw,148px)] drop-shadow-[0_4px_30px_rgb(0_0_0/0.35)]">
           <Lines lines={lines} />
         </h1>
@@ -94,7 +94,7 @@ export function PageHero({
 export function SectionHead({label, children, dark = false}: {label: string; children: ReactNode; dark?: boolean}) {
   return (
     <div data-reveal>
-      <p className={`caps ${dark ? 'text-yellow' : 'text-stone'}`}>{label}</p>
+      <p className={`caps ${dark ? 'text-red' : 'text-stone'}`}>{label}</p>
       <h2 className="display mt-4 text-[clamp(40px,5.4vw,92px)]">{children}</h2>
     </div>
   );
@@ -106,7 +106,7 @@ export function CategoryCard({c, i = 0, showItems = false}: {c: Category; i?: nu
       href={u(`/equipment/${c.slug}/`)}
       data-reveal
       style={{'--d': `${(i % 4) * 0.06}s`} as CSSProperties}
-      className="group relative flex flex-col overflow-hidden bg-coal text-white ring-1 ring-white/10 transition-shadow hover:ring-yellow"
+      className="group relative flex flex-col overflow-hidden bg-coal text-white ring-1 ring-white/10 transition-shadow hover:ring-red"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
@@ -118,23 +118,23 @@ export function CategoryCard({c, i = 0, showItems = false}: {c: Category; i?: nu
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 ease-silk group-hover:scale-105"
         />
-        <span className="absolute top-3 left-3 caps bg-ink/75 px-2.5 py-1 text-[11px] text-yellow">0{i + 1}</span>
+        <span className="absolute top-3 left-3 caps bg-ink/75 px-2.5 py-1 text-[11px] text-red">0{i + 1}</span>
       </div>
       <div className="flex flex-1 flex-col p-5 lg:p-6">
         <h3 className="display text-[clamp(30px,2.4vw,40px)]">
-          {c.name[0]} <span className="it text-yellow">{c.name[1]}</span>
+          {c.name[0]} <span className="it text-red">{c.name[1]}</span>
         </h3>
         <p className="mt-3 text-concrete">{c.short}</p>
         {showItems && (
           <ul className="mt-4 space-y-1.5 text-[15px] text-white/85">
             {c.items.map((it) => (
               <li key={it.name} className="flex gap-2">
-                <Icon name="check" size={16} className="mt-1 shrink-0 text-yellow" /> {it.name}
+                <Icon name="check" size={16} className="mt-1 shrink-0 text-red" /> {it.name}
               </li>
             ))}
           </ul>
         )}
-        <span className="caps mt-auto flex items-center gap-2 pt-6 text-yellow">
+        <span className="caps mt-auto flex items-center gap-2 pt-6 text-red">
           View range <Icon name="arrow" size={16} className="transition-transform group-hover:translate-x-1" />
         </span>
       </div>
@@ -174,7 +174,7 @@ export function FaqList({faqs, tone = 'paper'}: {faqs: Faq[]; tone?: 'paper' | '
 /** Numbered steps on a 4-up grid. */
 export function Steps({steps, tone = 'paper'}: {steps: {title: string; body: string}[]; tone?: 'paper' | 'ink'}) {
   const muted = tone === 'paper' ? 'text-stone' : 'text-concrete';
-  const line = tone === 'paper' ? 'border-ink' : 'border-yellow';
+  const line = tone === 'paper' ? 'border-ink' : 'border-red';
   return (
     <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((s, i) => (
@@ -191,7 +191,7 @@ export function Steps({steps, tone = 'paper'}: {steps: {title: string; body: str
 /** Yellow call-to-action band used near the end of most pages. */
 export function QuoteBand({title = 'Tell us the job.', sub = 'We’ll find the tool.', text}: {title?: string; sub?: string; text?: string}) {
   return (
-    <section className="on-yellow bg-yellow text-ink">
+    <section className="on-blue bg-blue text-white">
       <div className="wrap grid md:grid-cols-[1.4fr_1fr] md:items-end section-y gap-[var(--stack)]">
         <h2 className="display text-[clamp(46px,6.4vw,112px)]" data-reveal>
           {title} <span className="it block">{sub}</span>
@@ -201,7 +201,7 @@ export function QuoteBand({title = 'Tell us the job.', sub = 'We’ll find the t
           <a href={waLink()} className="caps flex min-h-12 items-center justify-between gap-6 bg-ink px-6 py-4 text-white transition-colors hover:bg-steel">
             WhatsApp for a quote <Icon name="chat" />
           </a>
-          <a href={u('/contact/')} className="caps flex min-h-12 items-center justify-between gap-6 border-2 border-ink px-6 py-4 transition-colors hover:bg-ink hover:text-white">
+          <a href={u('/contact/')} className="caps flex min-h-12 items-center justify-between gap-6 border-2 border-white px-6 py-4 transition-colors hover:bg-white hover:text-ink">
             Use the quote form <Icon name="arrow" />
           </a>
         </div>

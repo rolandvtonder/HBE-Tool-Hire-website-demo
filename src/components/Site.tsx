@@ -7,11 +7,18 @@ import {Icon} from './Icons';
 import {Menu} from './Menu';
 import {u} from '../lib/url';
 
-/** The text logo: a safety-yellow HBE block plus the full name. Swap for the real logo when it arrives. */
+/** The HBE / Hamashe Business Enterprise logo (it has its own black square) plus the trading name. */
 export function Wordmark({compact = false}: {compact?: boolean}) {
   return (
-    <span className="flex items-center gap-3 bg-ink/55 backdrop-blur-md sm:pr-4">
-      <span className="display grid h-11 place-items-center bg-yellow px-2.5 text-[28px] leading-none text-ink">{SITE.short}</span>
+    <span className="flex items-center gap-3 bg-ink/70 backdrop-blur-md sm:pr-4">
+      <img
+        src={u('/media/logo-160.png')}
+        srcSet={`${u('/media/logo-160.png')} 1x, ${u('/media/logo-320.png')} 2x`}
+        alt=""
+        width={54}
+        height={55}
+        className="block size-[54px]"
+      />
       {!compact && (
         <span className="caps hidden leading-tight text-white sm:block">
           Tool Hire
@@ -82,14 +89,14 @@ export function Site({path, children}: {path: string; children: ReactNode}) {
         <a
           href={telLink}
           aria-label={`Call ${CONTACT.phoneDisplay}`}
-          className="grid min-h-12 min-w-12 place-items-center bg-ink text-yellow shadow-lg ring-1 ring-white/15 md:hidden"
+          className="grid min-h-12 min-w-12 place-items-center bg-ink text-red shadow-lg ring-1 ring-white/15 md:hidden"
         >
           <Icon name="phone" />
         </a>
         <a
           href={onContact ? waLink() : u('/contact/')}
-          className={`caps flex min-h-12 items-center gap-3 px-6 py-3.5 text-ink shadow-[0_10px_30px_rgb(0_0_0/0.3)] transition-colors duration-300 md:px-8 md:py-4 ${
-            open ? 'bg-paper' : 'bg-yellow hover:bg-white'
+          className={`caps flex min-h-12 items-center gap-3 px-6 py-3.5 shadow-[0_10px_30px_rgb(0_0_0/0.3)] transition-colors duration-300 md:px-8 md:py-4 ${
+            open ? 'bg-paper text-ink' : 'bg-red-deep text-white hover:bg-white hover:text-ink'
           }`}
         >
           {onContact ? (

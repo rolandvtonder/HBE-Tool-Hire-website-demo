@@ -9,7 +9,7 @@ import {u} from '../lib/url';
 function Card({icon, label, children}: {icon: IconName; label: string; children: ReactNode}) {
   return (
     <div data-reveal className="flex gap-5 border-b border-white/15 py-6">
-      <span className="grid size-12 shrink-0 place-items-center bg-yellow text-ink">
+      <span className="grid size-12 shrink-0 place-items-center bg-red-deep text-white">
         <Icon name={icon} size={22} />
       </span>
       <div>
@@ -34,7 +34,7 @@ export function Contact() {
         ]}
       >
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={waLink()} className="caps flex min-h-12 items-center gap-3 bg-yellow px-6 py-3.5 text-ink hover:bg-white">
+          <a href={waLink()} className="caps flex min-h-12 items-center gap-3 bg-red-deep px-6 py-3.5 text-white hover:bg-white hover:text-ink">
             <Icon name="chat" size={18} /> WhatsApp {CONTACT.phoneDisplay}
           </a>
           <a href={telLink} className="caps flex min-h-12 items-center gap-3 bg-white/15 px-6 py-3.5 backdrop-blur-md hover:bg-white/25">
@@ -63,7 +63,7 @@ export function Contact() {
             </Card>
             <Card icon="pin" label="Yard">
               <address className="not-italic">{address()}</address>
-              <a href={mapsUrl} target="_blank" rel="noopener" className="caps mt-2 inline-flex items-center gap-2 text-yellow hover:underline">
+              <a href={mapsUrl} target="_blank" rel="noopener" className="caps mt-2 inline-flex items-center gap-2 text-red hover:underline">
                 Open in Google Maps <Icon name="arrowUpRight" size={16} />
               </a>
             </Card>
@@ -79,7 +79,7 @@ export function Contact() {
             </Card>
             <Card icon="truck" label="Delivery">
               Greater Durban &amp; eThekwini.{' '}
-              <a href={u('/delivery/')} className="text-yellow underline-offset-4 hover:underline">
+              <a href={u('/delivery/')} className="text-red underline-offset-4 hover:underline">
                 Delivery details
               </a>
             </Card>

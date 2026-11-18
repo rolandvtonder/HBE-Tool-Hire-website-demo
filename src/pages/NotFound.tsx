@@ -15,7 +15,7 @@ export function NotFound() {
           {label: 'Page not found', href: '/404/'},
         ]}
       >
-        <a href={u('/')} className="caps mt-8 inline-flex min-h-12 items-center bg-yellow px-6 py-3.5 text-ink hover:bg-white">
+        <a href={u('/')} className="caps mt-8 inline-flex min-h-12 items-center bg-red-deep px-6 py-3.5 text-white hover:bg-white hover:text-ink">
           Back to home
         </a>
       </PageHero>

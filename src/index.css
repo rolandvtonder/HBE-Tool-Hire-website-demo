@@ -1,15 +1,19 @@
 @import 'tailwindcss';
 
-/* Site at work: safety yellow on workshop black, raw concrete off-white. */
+/* HBE / Hamashe Business Enterprise brand: the logo's red, blue and white on
+   black. Logo red and blue are used as-is for accents; the "deep" red sits
+   behind white text, where the logo red would fall short of 4.5:1. */
 @theme {
-  --color-ink: #0e0e0d;
-  --color-coal: #191918;
-  --color-steel: #2b2b29;
-  --color-yellow: #ffc20e;
-  --color-yellow-deep: #e5a900;
-  --color-paper: #f2efe7;
-  --color-concrete: #b3afa5; /* muted text on ink — 8.9:1 */
-  --color-stone: #57534b; /* muted text on paper — 6.9:1 */
+  --color-ink: #0b0b0d;
+  --color-coal: #16161a;
+  --color-steel: #26262c;
+  --color-red: #ff1744; /* logo red — accents & text on ink, 5.1:1 */
+  --color-red-deep: #d50032; /* white text on it 5.4:1; as text on paper 5:1 */
+  --color-blue: #304ffe; /* logo blue — white text on it 5.7:1; text on paper 5.2:1 */
+  --color-blue-bright: #6b7fff; /* blue text on ink, 5.7:1 */
+  --color-paper: #f4f5f7;
+  --color-concrete: #b3b5bc; /* muted text on ink — 9:1 */
+  --color-stone: #50535b; /* muted text on paper — 7.4:1 */
 
   --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   --font-sans: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -79,8 +83,8 @@ body {
   overflow-x: clip;
 }
 ::selection {
-  background: var(--color-yellow);
-  color: var(--color-ink);
+  background: var(--color-blue);
+  color: #fff;
 }
 a,
 button,
@@ -90,12 +94,15 @@ label[for] {
   touch-action: manipulation;
 }
 :focus-visible {
-  outline: 3px solid var(--color-yellow);
+  /* Bright blue reads on both black (5.7:1) and paper (3.1:1). */
+  outline: 3px solid var(--color-blue-bright);
   outline-offset: 3px;
 }
-.on-yellow :focus-visible,
 .on-paper :focus-visible {
-  outline-color: var(--color-ink);
+  outline-color: var(--color-blue);
+}
+.on-blue :focus-visible {
+  outline-color: #fff;
 }
 
 .skip-link {
@@ -104,8 +111,8 @@ label[for] {
   left: 12px;
   z-index: 100;
   padding: 12px 18px;
-  background: var(--color-yellow);
-  color: var(--color-ink);
+  background: var(--color-red-deep);
+  color: #fff;
   font-weight: 700;
   transform: translateY(-200%);
 }
@@ -135,8 +142,9 @@ label[for] {
   line-height: 1.6;
 }
 
-.hazard {
-  background: repeating-linear-gradient(-45deg, var(--color-yellow) 0 14px, var(--color-ink) 14px 28px);
+/* The logo's three colours as a bar: H red, B blue, E white. */
+.brand-bar {
+  background: linear-gradient(90deg, var(--color-red) 0 33.34%, var(--color-blue) 33.34% 66.67%, #fff 66.67%);
 }
 
 /* Scroll reveals — hidden states only once JS is known to be running. */

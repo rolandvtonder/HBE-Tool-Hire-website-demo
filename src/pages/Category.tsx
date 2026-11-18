@@ -25,7 +25,7 @@ export function Category({c}: {c: Cat}) {
         ]}
       >
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={waLink(`Hi HBE, I'd like a quote for ${c.title.toLowerCase()} hire.`)} className="caps flex min-h-12 items-center gap-3 bg-yellow px-6 py-3.5 text-ink hover:bg-white">
+          <a href={waLink(`Hi HBE, I'd like a quote for ${c.title.toLowerCase()} hire.`)} className="caps flex min-h-12 items-center gap-3 bg-red-deep px-6 py-3.5 text-white hover:bg-white hover:text-ink">
             <Icon name="chat" size={18} /> Quote on WhatsApp
           </a>
           <a href="#range" className="caps flex min-h-12 items-center gap-3 bg-white/15 px-6 py-3.5 backdrop-blur-md hover:bg-white/25">
@@ -86,14 +86,14 @@ export function Category({c}: {c: Cat}) {
         </div>
       </section>
 
-      <section className="on-yellow bg-yellow text-ink">
+      <section className="on-blue bg-blue text-white">
         <div className="wrap grid lg:grid-cols-[1fr_1.4fr] section-y gap-[var(--stack)]">
           <h2 className="display text-[clamp(40px,5vw,84px)]" data-reveal>
             Before <span className="it">you hire</span>
           </h2>
           <ul className="grid gap-6 sm:grid-cols-3">
             {c.tips.map((t, i) => (
-              <li key={t} data-reveal style={{'--d': `${i * 0.08}s`} as CSSProperties} className="border-t-4 border-ink pt-5 text-[18px] font-medium">
+              <li key={t} data-reveal style={{'--d': `${i * 0.08}s`} as CSSProperties} className="border-t-4 border-white pt-5 text-[18px] font-medium">
                 <Icon name="shield" size={22} className="mb-3" />
                 {t}
               </li>
@@ -119,7 +119,7 @@ export function Category({c}: {c: Cat}) {
       <section className="bg-ink">
         <div className="wrap section-y">
           <SectionHead label="Also for hire" dark>
-            Other <span className="it text-yellow">ranges</span>
+            Other <span className="it text-red">ranges</span>
           </SectionHead>
           <div className="mt-[var(--stack)] grid gap-4 sm:grid-cols-3 lg:gap-5">
             {related.map((r) => (

@@ -35,7 +35,7 @@ export function Delivery() {
         <div className="wrap grid lg:grid-cols-[1fr_1.5fr] section-y gap-[var(--stack)]">
           <div>
             <SectionHead label="Where we deliver" dark>
-              Greater <span className="it block text-yellow">Durban</span>
+              Greater <span className="it block text-red">Durban</span>
             </SectionHead>
             <p data-reveal className="mt-6 max-w-md text-[18px] text-concrete">
               We deliver across eThekwini — from the CBD and Berea to the North Coast, the Upper Highway and the South Coast. Not on
@@ -50,7 +50,7 @@ export function Delivery() {
                 style={{'--d': `${(i % 9) * 0.03}s`} as CSSProperties}
                 className="flex items-center gap-3 border-b border-white/10 py-2 text-[17px]"
               >
-                <Icon name="pin" size={16} className="shrink-0 text-yellow" /> {a}
+                <Icon name="pin" size={16} className="shrink-0 text-red" /> {a}
               </li>
             ))}
           </ul>
@@ -65,7 +65,7 @@ export function Delivery() {
           <ul className="space-y-5">
             {DELIVERY.notes.map((n, i) => (
               <li key={n} data-reveal style={{'--d': `${i * 0.06}s`} as CSSProperties} className="flex gap-4 text-[18px]">
-                <span className="grid size-9 shrink-0 place-items-center bg-yellow">
+                <span className="grid size-9 shrink-0 place-items-center bg-red-deep text-white">
                   <Icon name="check" size={18} />
                 </span>
                 {n}

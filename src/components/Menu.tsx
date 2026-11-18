@@ -5,7 +5,7 @@ import {u} from '../lib/url';
 
 /**
  * The menu: three slabs wipe in from the right one after another
- * (ink, safety yellow, concrete paper); the paper one stays and holds the
+ * in the logo's colours (red, blue, white); the white one stays and holds the
  * items. Hovering an item ripples it like heat shimmer off hot tarmac — an
  * SVG turbulence + displacement filter animated per frame.
  */
@@ -49,7 +49,7 @@ export function Menu({open, path, onClose}: {open: boolean; path: string; onClos
     `absolute inset-y-0 right-0 w-[min(34vw,480px)] max-md:w-full transition-transform duration-[800ms] ease-wipe ${extra} ${
       open ? 'translate-x-0' : 'translate-x-[104%]'
     }`;
-  // Open: ink → yellow → paper, staggered. Close: the reverse, faster.
+  // Open: red → blue → white, staggered. Close: the reverse, faster.
   const delay = (k: number): CSSProperties => ({transitionDelay: `${open ? k * 0.09 : (2 - k) * 0.06}s`});
 
   return (
@@ -70,8 +70,8 @@ export function Menu({open, path, onClose}: {open: boolean; path: string; onClos
         className={`absolute inset-0 cursor-default bg-ink/40 transition-opacity duration-500 ${open ? 'opacity-100' : 'opacity-0'}`}
       />
 
-      <div className={slab('bg-ink')} style={delay(0)} />
-      <div className={slab('bg-yellow')} style={delay(1)} />
+      <div className={slab('bg-red')} style={delay(0)} />
+      <div className={slab('bg-blue')} style={delay(1)} />
       <nav className={slab('on-paper flex flex-col justify-between overflow-y-auto bg-paper px-8 pt-28 pb-8 text-ink md:px-10')} style={delay(2)} aria-label="Main menu">
         <ul onMouseLeave={() => setHover(-1)}>
           {NAV.map((item, i) => {
@@ -95,7 +95,7 @@ export function Menu({open, path, onClose}: {open: boolean; path: string; onClos
                   }`}
                   style={{filter: hover === i ? 'url(#ripple)' : 'none'}}
                 >
-                  {active && <span className="inline-block size-3 bg-yellow ring-2 ring-ink" aria-hidden />}
+                  {active && <span className="inline-block size-3 bg-red-deep" aria-hidden />}
                   <span className={active ? 'it' : ''}>{item.label}</span>
                   <sup className="caps absolute -right-7 top-2 text-[10px] tracking-normal text-stone">0{i + 1}</sup>
                 </a>

@@ -93,7 +93,7 @@ export function QuoteForm() {
   const field = (k: Key, input: ReactNode, opts: {required?: boolean; hint?: string} = {}) => (
     <div>
       <label htmlFor={id(k)} className="block font-semibold">
-        {LABELS[k]} {opts.required ? <span aria-hidden className="text-[#a33a00]">*</span> : <span className="font-normal text-stone">(optional)</span>}
+        {LABELS[k]} {opts.required ? <span aria-hidden className="text-red-deep">*</span> : <span className="font-normal text-stone">(optional)</span>}
       </label>
       {opts.hint && (
         <p id={`${id(k)}-hint`} className="mt-1 text-[15px] text-stone">
@@ -102,7 +102,7 @@ export function QuoteForm() {
       )}
       <div className="mt-2">{input}</div>
       {shown(k) && (
-        <p id={`${id(k)}-err`} className="mt-2 flex items-start gap-2 text-[15px] font-medium text-[#a33a00]">
+        <p id={`${id(k)}-err`} className="mt-2 flex items-start gap-2 text-[15px] font-medium text-red-deep">
           <Icon name="alert" size={18} className="mt-0.5 shrink-0" /> {errors[k]}
         </p>
       )}
@@ -112,7 +112,7 @@ export function QuoteForm() {
     [hint && `${id(k)}-hint`, shown(k) && `${id(k)}-err`].filter(Boolean).join(' ') || undefined;
   const box = (k: Key) =>
     `block min-h-12 w-full border-2 bg-white px-4 py-3 text-[17px] text-ink outline-none transition-colors focus:border-ink ${
-      shown(k) ? 'border-[#a33a00]' : 'border-ink/20'
+      shown(k) ? 'border-red-deep' : 'border-ink/20'
     }`;
 
   const errorList = Object.entries(errors) as [Key, string][];
@@ -127,7 +127,7 @@ export function QuoteForm() {
       </div>
 
       {submitted && errorList.length > 0 && (
-        <div ref={summary} tabIndex={-1} role="alert" className="border-l-4 border-[#a33a00] bg-white p-5 outline-none">
+        <div ref={summary} tabIndex={-1} role="alert" className="border-l-4 border-red-deep bg-white p-5 outline-none">
           <p className="font-bold">Please fix {errorList.length === 1 ? 'this' : `these ${errorList.length}`} before sending:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             {errorList.map(([k, msg]) => (

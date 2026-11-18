@@ -39,24 +39,24 @@ The workflow builds with `BASE_PATH=/<repo-name>/` so the site works from that s
 - `sitemap.xml` and `robots.txt` generated on build
 - One H1 per page, local keywords ("… hire Durban", eThekwini suburbs), fast static HTML, WebP images, `lang="en-ZA"`
 
-## Before going live — replace the placeholders
+## Brand & details
+
+Brand colours, logo and business details come from the *Hamashe Business Enterprise Profile 2026*. The logo's red `#ff1744`, blue `#304ffe` and white sit on black. A deeper red `#d50032` is used behind white text, because the logo red is too light for small white text. The tokens are in `src/index.css`. The logo files are `public/media/logo-*.png`, and the favicons are in `public/`.
+
+## Before going live — still to confirm
 
 All copy lives in **`src/content.ts`**. Search it for `PLACEHOLDER`:
 
-1. **Domain:** `SITE.url`. It's used for canonical URLs, the sitemap and the structured data.
-2. **Email:** `CONTACT.email`.
-3. **Street address + postal code:** `CONTACT.street`, `CONTACT.postal`.
-4. **Opening hours:** `HOURS`.
-5. **Equipment lists:** `items` in each of the `CATEGORIES`. These are a typical range; list what you actually stock.
-6. **About story:** `ABOUT.story`.
-7. **FAQ answers and hire terms:** `FAQ_GROUPS`, `TERMS`. Match these to your real deposit, ID and payment policies.
+1. **Opening hours:** `HOURS`.
+2. **Equipment lists:** `items` in each of the `CATEGORIES`. These are a typical range; list what you actually stock.
+3. **FAQ answers and hire terms:** `FAQ_GROUPS`, `TERMS`. Match these to your real deposit, ID and payment policies.
+4. **Domain:** `SITE.url` currently points at the GitHub Pages demo. Change it when you buy a domain.
 
 Then:
 
-- **Logo:** the "HBE" yellow block is a text logo in `src/components/Site.tsx` (`Wordmark`). Send the real logo and swap it in. Also replace `public/favicon.svg`.
 - **Photos & video:** they're free Pexels stock in `public/media/`. Replace them with your own photos using the same filenames.
-- **Google Business Profile:** create or claim one with the same name, phone and address. It matters more for local search than anything on the site.
-- Submit `https://<your-domain>/sitemap.xml` in Google Search Console.
+- **Google Business Profile:** create or claim one with the same name, phone and address (Unit 3D Wiggins Hive, 100 Dunbar Road, Wiggins). It matters more for local search than anything on the site.
+- Submit `<site>/sitemap.xml` in Google Search Console.
 
 ## Notes
 

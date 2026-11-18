@@ -1,15 +1,18 @@
 /**
  * All copy and business details live here — pages only lay it out.
  *
- * Anything marked PLACEHOLDER must be confirmed or replaced by HBE before the
- * site goes live (domain, email, street address, hours, and the exact items in
- * each category, which are a typical tool-hire range, not a stock list).
+ * Business details come from the Hamashe Business Enterprise Profile 2026.
+ * Anything marked PLACEHOLDER must still be confirmed by HBE before the site
+ * goes live (opening hours, hire policies, and the exact items in each
+ * category, which are a typical tool-hire range, not a stock list).
  */
 
 export const SITE = {
-  url: 'https://www.hbetoolhire.co.za', // PLACEHOLDER — the live domain, no trailing slash
+  // The demo's address on GitHub Pages. Change to the real domain when there is one (no trailing slash).
+  url: 'https://rolandvtonder.github.io/HBE-Tool-Hire-website-demo',
   name: 'HBE Tool Hire & Rentals',
   short: 'HBE',
+  legalName: 'Hamashe Business Enterprise',
   tagline: 'Tool hire & rentals in Durban',
   ogImage: '/media/og.jpg',
 };
@@ -18,9 +21,9 @@ export const CONTACT = {
   phoneDisplay: '073 771 3494',
   phoneIntl: '+27737713494',
   whatsapp: '27737713494',
-  email: 'info@hbetoolhire.co.za', // PLACEHOLDER
-  street: '', // PLACEHOLDER — e.g. '12 Example Road, Wiggins'
-  postal: '', // PLACEHOLDER — e.g. '4091'
+  email: 'info.hamashe@gmail.com',
+  street: 'Unit 3D Wiggins Hive, 100 Dunbar Road, Wiggins',
+  postal: '', // not in the company profile
   city: 'Durban',
   region: 'KwaZulu-Natal',
   regionCode: 'KZN',
@@ -63,7 +66,7 @@ export const NAV = [
 
 export type Line = {t: string; i?: boolean};
 
-/** Headline lines; `i` lines are set in italic yellow. */
+/** Headline lines; `i` lines are set in italic, in the logo's red then blue. */
 export const HOME = {
   eyebrow: 'Tool hire & rentals · Durban, KZN',
   lines: [{t: 'Hire the'}, {t: 'right tool.', i: true}, {t: 'Delivered across'}, {t: 'Durban.', i: true}] as Line[],
@@ -191,7 +194,7 @@ export const CATEGORIES: Category[] = [
     slug: 'concrete',
     title: 'Concrete & Mixing',
     name: ['Concrete', '& mixing'],
-    short: 'Concrete mixers, poker vibrators, power floats and wheelbarrows.',
+    short: 'Concrete mixers, site dumpers, poker vibrators, power floats and wheelbarrows.',
     image: 'concrete.webp',
     imageAlt: 'Builder loading sand and stone into a concrete mixer on site',
     panel: [['For', 'Slabs, footings, plaster'], ['Power', 'Electric & petrol']],
@@ -202,6 +205,7 @@ export const CATEGORIES: Category[] = [
       {name: 'Petrol concrete mixer', desc: 'Same job, no power point needed.', uses: ['Remote sites', 'Footings']},
       {name: 'Poker vibrator', desc: 'Removes air pockets for stronger, denser concrete in slabs and columns.', uses: ['Slabs', 'Columns', 'Beams']},
       {name: 'Power float (helicopter)', desc: 'Trowels a fresh slab to a smooth, hard finish.', uses: ['Floors', 'Garages']},
+      {name: 'Site dumper', desc: 'Moves sand, stone, rubble and wet concrete around site — far faster than barrows.', uses: ['Moving materials', 'Rubble', 'Concrete pours']},
       {name: 'Wheelbarrow', desc: 'Heavy-duty builder’s barrow.', uses: ['Moving mix', 'Rubble']},
     ],
     tips: [
@@ -384,13 +388,32 @@ export const TERMS = [
   'For delivery, safe access and someone to receive the equipment must be available at the agreed time.',
 ];
 
+/** Company facts from the Hamashe Business Enterprise Profile 2026. */
+export const CREDENTIALS = ['100% black-owned', 'B-BBEE Level 1 contributor', 'Tax compliant', 'Based in Wiggins, Durban'];
+
 export const ABOUT = {
-  lines: [{t: 'Local tools.'}, {t: 'Straight answers.', i: true}] as Line[],
-  body: 'HBE Tool Hire & Rentals supplies serviced construction, DIY and garden equipment to builders, contractors and homeowners across Durban.',
-  // PLACEHOLDER — replace with HBE's own story (when and why it started, who runs it).
+  lines: [{t: 'Built by'}, {t: 'builders.', i: true}] as Line[],
+  body: 'HBE Tool Hire is the tool hire and rental arm of Hamashe Business Enterprise — a Durban built-environment company in construction, building maintenance, plumbing, civil engineering and road marking.',
   story: [
-    'We started HBE for a simple reason: getting the right tool shouldn’t be the hardest part of the job. Builders, contractors and homeowners need equipment that works first time, a straight answer on price, and someone who picks up the phone.',
-    'So that’s how we run it. Every machine is cleaned, checked and test-run between hires. We tell you honestly which tool suits the job — even if that means the cheaper one. And we deliver across eThekwini, so you can stay on site.',
+    'Hamashe Business Enterprise is a multi-disciplinary professional service provider in the built environment sector, based at Wiggins Hive in Durban. It was set up to empower and build capacity for young professionals in the emerging built environment sector, and to take a meaningful part in redressing historical economic imbalances and the lack of business opportunities for young professionals.',
+    'HBE Tool Hire puts the same equipment we use on our own construction and maintenance sites in your hands — serviced, checked and ready to work, with straight advice from people who use these tools every day.',
+  ],
+  mission: 'To assist our clients in achieving excellence within civil and structural engineering through cost-effective, high-quality construction solutions.',
+  vision: 'To be a leading construction service provider with a solid footprint built on trust, quality and reliability.',
+  approach:
+    'Our work runs to a detailed schedule set out in a service level agreement. Project managers, supervisors and staff complete inspection checklists to confirm every task is done, and each focus area is assigned to competent staff who are responsible for delivering it.',
+  services: ['Construction', 'General building & maintenance', 'General plumbing', 'Civil engineering', 'Road marking', 'Tool hire & rental'],
+  projects: [
+    {client: 'Richmond Municipality', work: 'Road construction'},
+    {client: 'Ideal Building & Aluminium', work: 'Ongoing office sub-contract: site cleaning & clearance'},
+    {client: 'Bonga Banzi Consulting', work: 'Contract office maintenance services'},
+    {client: 'Franto Installations', work: 'Construction of a plinth — Clairwood Hospital PPSD'},
+  ],
+  people: [
+    {title: 'Mentorship & training', body: 'Ongoing coaching, mentoring and training through our Resource Development Programme, with job enrichment, career planning and advancement for our people.'},
+    {title: 'Skills transfer', body: 'On-the-job training and mentorship from experienced business leaders, growing skills in construction across Africa.'},
+    {title: 'Enterprise development', body: 'We use SMMEs as suppliers and bring them onto projects whenever extra resources are needed.'},
+    {title: 'Social responsibility', body: 'We run social responsibility projects that contribute to the development of the communities we work in.'},
   ],
   values: [
     {title: 'Ready to work', body: 'Serviced, fuelled where needed and test-run before every hire.'},

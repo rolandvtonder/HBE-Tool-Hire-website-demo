@@ -66,9 +66,9 @@ export const ROUTES: Route[] = [
   },
   {
     path: '/about/',
-    title: 'About HBE Tool Hire & Rentals | Durban Tool Hire',
+    title: 'About HBE Tool Hire | Hamashe Business Enterprise, Durban',
     description:
-      'HBE Tool Hire & Rentals supplies serviced construction, DIY and garden equipment to builders, contractors and homeowners across Durban. Honest advice, delivered to site.',
+      'HBE Tool Hire is part of Hamashe Business Enterprise — a 100% black-owned, B-BBEE Level 1 built-environment company in Wiggins, Durban: construction, maintenance, plumbing, civil engineering, road marking and tool hire.',
     image: '/media/about.webp',
     crumbs: [['About us', '/about/']],
     preload: '/media/about.webp',

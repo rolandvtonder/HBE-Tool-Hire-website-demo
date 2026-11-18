@@ -18,7 +18,7 @@ export function Faq() {
       >
         <nav aria-label="On this page" className="mt-8 flex flex-wrap gap-2">
           {[...FAQ_GROUPS.map((g) => g.title), 'Hire terms'].map((t) => (
-            <a key={t} href={`#${slug(t)}`} className="caps border border-white/25 px-4 py-2.5 hover:border-yellow hover:text-yellow">
+            <a key={t} href={`#${slug(t)}`} className="caps border border-white/25 px-4 py-2.5 hover:border-red hover:text-red">
               {t}
             </a>
           ))}
@@ -44,7 +44,7 @@ export function Faq() {
         <div className="wrap grid lg:grid-cols-[1fr_1.8fr] section-y gap-[var(--stack)]">
           <div>
             <SectionHead label="The fine print" dark>
-              Hire <span className="it text-yellow">terms</span>
+              Hire <span className="it text-red">terms</span>
             </SectionHead>
             <p data-reveal className="mt-6 max-w-sm text-concrete">
               A plain-English summary. Your signed hire agreement is the binding document — ask us for a copy any time.
@@ -58,7 +58,7 @@ export function Faq() {
                 style={{'--d': `${(i % 4) * 0.05}s`} as CSSProperties}
                 className="grid grid-cols-[56px_1fr] gap-4 border-b border-white/15 py-5 text-[18px]"
               >
-                <span className="display text-[30px] text-yellow">{String(i + 1).padStart(2, '0')}</span>
+                <span className="display text-[30px] text-red">{String(i + 1).padStart(2, '0')}</span>
                 <span className="text-white/90">{t}</span>
               </li>
             ))}
